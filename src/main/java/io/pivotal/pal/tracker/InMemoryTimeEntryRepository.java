@@ -12,7 +12,7 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
     private HashMap<Long, TimeEntry> Entries = new HashMap<>();
     private long idCounter = 1;
 
-    public TimeEntry find(long l) {
+    public TimeEntry find(Long l) {
         return Entries.get(l);
     }
     
@@ -33,8 +33,8 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
         return updated;
     }
 
-    public TimeEntry delete(Long id) {
+    public void delete(Long id) {
         Entries.remove(id);
-        return Entries.get(id);
+
     }
 }
